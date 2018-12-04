@@ -15,7 +15,7 @@ To complete the coursework assignment, it will make your life easier if you writ
 
 ## Linear Feedback Shift Register
 
-A _linear feedback shift register_ (LFSR) is a type of counter that generates a "pseudo random" sequence. In simple terms, it is a register of bits that performs discrete step operations that:
+A _linear feedback shift register_ (LFSR) is a type of counter that generates a "pseudo random" sequence of bits, which is particularly useful in cryptography. In simple terms, it is a register of bits that performs discrete step operations that:
 
 - Shift all of the bits one position to the left and
 - Replaces the vacated bit by the _exclusive or_ (XOR) of certain bits shifted off, indicated by the _tap_ positions.
@@ -24,7 +24,7 @@ A LFSR has three parameters that characterize the sequence of bits it produces: 
 
 ![One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8](https://raw.githubusercontent.com/vilmosz/cw19/master/LFSR.png)
 
-Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and [Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as it will be necessary for you to complete the coursework.
+Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and [Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as it is necessary for you to complete the coursework.
  
 ## Assignment
 
@@ -113,16 +113,13 @@ The _srn_ and _name_ fields are self-explanatory. The binary _keyFragment_ field
  
 The _cipherText_ is also given in hexadecimal, so this needs to be converted to binary before the _key_ can be applied on it, i.e. a simple _exclusive or_ (XOR) operation, to get the encoded plain text. The binary encoded plain text then can be decoded to obtain the actual _plainText_, which is a recognisable English dictionary word.
  
-You should notice 3 things:
+You should notice the following:
+
 - the intercepted _cipherText_ is in hexadecimal and is 10 bytes long, exactly the same length as the generated _key stream_,
 - the _key stream_ starts with the given _seed_,
 - the _key stream_ contains the the _keyFragment_.
  
-All strings are encoded / decoded using UTF-8. There are UTF-8 encoders/decoders available for all programming languages. If you have difficulty decoding, you can double-check yourself with the following Web API call:
- 
- http://foley.gold.ac.uk/cw19/api/decode?binary=11101010110111001101001
- 
-This decodes as __uni__. You can call this with any binary number.
+All strings are encoded / decoded using UTF-8. There are UTF-8 encoders/decoders available for all programming languages. If you have difficulties decoding, you can double-check your results with the following Web API call: http://foley.gold.ac.uk/cw19/api/decode?binary=11101010110111001101001. This decodes as __uni__. You can call this with any binary number.
 
 ### Final note
 
