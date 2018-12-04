@@ -5,9 +5,9 @@
 
 # Coursework assignment 1 2018-19
 
-__IMPORTANT:__ all students have been allocated a unique set of cipher text and intercepted key stream and seed to use for this coursework assignment. You can obtain this using your Student Reference Number (SRN) from the following URL: http://foley.gold.ac.uk/cw19/api/cw1/{srn}. For example, if your SRN is 877665544, you would obtain your data from http://foley.gold.ac.uk/cw19/api/cw1/877665544. If you have difficulties obtaining your cipher text and intercepted key stream and seed, please email us at: intcomp@gold.ac.uk
+__IMPORTANT:__ all students have been allocated a unique set of cipher text, intercepted key stream fragment and seed to use for this coursework assignment. You can obtain this using your Student Reference Number (SRN) from the following URL: http://foley.gold.ac.uk/cw19/api/cw1/{srn}. For example, if your SRN is 877665544, you would obtain your data from http://foley.gold.ac.uk/cw19/api/cw1/877665544. If you have difficulties obtaining your cipher text, intercepted key stream fragment and seed, please email us at: intcomp@gold.ac.uk
 
-This coursework assignment is designed to help you enrich your learning experience and to encourage self-study and creativity. Chapter 5 (pages 49-52) of the subject guide and the suggested supplementary reading will help you in completing this assignment. You should read the coursework assignments carefully and pay particular attention to the [Submission requirements](#submission-requirements).
+This coursework assignment is designed to help you enrich your learning experience and to encourage self-study and creativity. Chapter 5 (pages 49-62) of the subject guide and the suggested supplementary reading is a good starting point and will help you in completing this assignment. You should read the coursework assignments carefully and pay particular attention to the [Submission requirements](#submission-requirements).
 
 You are expected to submit __two__ files: a __report__ and a __results sheet__. The _report_ counts as __60%__ of your coursework assignment mark, in which you're expected to answer the questions below. The _results sheet_ counts as __40%__ of your mark, in which you're expected to summarise the results of your calculations in a specific format. Please use the cipher text and keys provided when answering the questions and when compiling the results sheet.
 
@@ -15,19 +15,26 @@ To complete the coursework assignment, it will make your life easier if you writ
 
 ## Linear Feedback Shift Register
 
-A _linear feedback shift register_ is a register of bits that performs discrete step operations that
+A _linear feedback shift register_ is a register of bits that performs discrete step operations that:
 - Shift all of the bits one position to the left and
-- Replaces the vacated bit by the _exclusive or_ (XOR) of the bit shifted off and the bit at a given tap position in the register.
+- Replaces the vacated bit by the _exclusive or_ (XOR) of certain bits shifted off, indicated by the _tap_ positions.
 
 A LFSR has three parameters that characterize the sequence of bits it produces: the number of bits _N_, the initial _seed_ (the sequence of bits that initializes the register), and the the tap positions _tap_. The following picture illustrates one step of an 11-bit LFSR with initial seed 11010000101 and tap positions 10 and 8.
 
 <p align="center">
-  <img src="LFSR.png" width="350" title="One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8">
+  <img src="LFSR.png" width="100%" title="One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8">
 </p>
 
-Suppose you are an avid hacker working for a security agency and you are eavesdropping on a converstion between _Alice_ and _Bob_. You intercept a cipher text that you know has been sent from Alice to Bob. You look up both Alice and Bob's public keys in a key directory. You know that they are using an RSA cryptosystem. You assume that Alice wants to be sure that only Bob can decrypt the message. You also assume that Bob wants to be sure that Alice has sent the message. You would like to decrypt the message.
+Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and W
+[Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as it will be necessary for you to complete the coursework.
+ 
+In your research and reading you'll find references to _polynomials_ in the context of LFSRs, for example _x<sup>11</sup> + x<sup>9</sup> + 1_, which is equivalent to _tap positions 10 and 8_ and incidentally is a maximal length polynomial / tap positions for an 11-bit LFSR, allowing a maximum period of 2047 (= 2<sup>11</sup> - 1).
 
-__IMPORTANT:__ To answer the questions below, please use the cipher text and public keys (of Alice and Bob) that you obtained using your SRN.
+## Assignment
+
+Suppose you are an avid hacker working for a security agency and you are eavesdropping on a conversation between _Alice_ and _Bob_. You intercept a _cipher text_, a _key stream fragment_ and a _seed_ that you know has been sent from Alice to Bob. You know that they are using an cryptosystem based on LFSRs. You would like to decrypt the message.
+
+__IMPORTANT:__ To answer the questions below, please use the _cipher text_, intercepted _key stream fragment_ and _seed_ that you obtained using your SRN.
 
 ### Question 1
 Describe briefly the steps you need to take to decipher the message.
@@ -107,27 +114,3 @@ You can use this well-formed JSON to adapt for your numbers and your calculation
 As the JSON is evaluated by an algorithm, every quote, comma, colon, curly brace upper/lower case is crucial. Please pay attention to these. It would be a shame to lose a potential __40%__ of the total marks for this coursework assignment because of a misplaced comma or a missing quote. There are online tools you can use for JSON formatting and validation (for example [this](https://jsonformatter.curiousconcept.com/)), so double-check that your JSON is syntactically correct.
 
 Please note that the numbers are enclosed within quotes. There is a hint here: the numbers are too large to be represented as `long` or `int`.
-
-### Help
-
-In order to encrypt/decrypt a message, you need to encode the text (string) as a number. If you write your code in `Java`, you can use the following methods:
-
-* for encoding:
-```java
- public static BigInteger encode(final String text) {
-     return new BigInteger(text, Character.MAX_RADIX);
- }
-```
-* for decoding:
-```java
- public static String decode(final BigInteger number) {
-     return number.toString(Character.MAX_RADIX);
- }
-```
-
-Alternatively, if you're writing your program in a language other than `Java`, you can rely on the following web service for encoding/decoding:
-
-- http://foley.gold.ac.uk/cw18/api/encode?text=university
-- http://foley.gold.ac.uk/cw18/api/decode?number=3113163156336982
-
-obviously replacing `university` or `3113163156336982` in the URL with the text or number you want to encode/decode. The service works for one-word texts (so no space or special characters). There is another hint here: if your decryption is correct, you will get a recognisable English word.
