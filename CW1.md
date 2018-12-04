@@ -15,6 +15,16 @@ To complete the coursework assignment, it will make your life easier if you writ
 
 ## Linear Feedback Shift Register
 
+A _linear feedback shift register_ is a register of bits that performs discrete step operations that
+- Shift all of the bits one position to the left and
+- Replaces the vacated bit by the _exclusive or_ (XOR) of the bit shifted off and the bit at a given tap position in the register.
+
+A LFSR has three parameters that characterize the sequence of bits it produces: the number of bits _N_, the initial _seed_ (the sequence of bits that initializes the register), and the the tap positions _tap_. The following picture illustrates one step of an 11-bit LFSR with initial seed 11010000101 and tap positions 10 and 8.
+
+<p align="center">
+  <img src="LFSR.png" width="350" title="One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8">
+</p>
+
 Suppose you are an avid hacker working for a security agency and you are eavesdropping on a converstion between _Alice_ and _Bob_. You intercept a cipher text that you know has been sent from Alice to Bob. You look up both Alice and Bob's public keys in a key directory. You know that they are using an RSA cryptosystem. You assume that Alice wants to be sure that only Bob can decrypt the message. You also assume that Bob wants to be sure that Alice has sent the message. You would like to decrypt the message.
 
 __IMPORTANT:__ To answer the questions below, please use the cipher text and public keys (of Alice and Bob) that you obtained using your SRN.
