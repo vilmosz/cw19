@@ -1,6 +1,6 @@
 # University of London International Programmes
 
-# Computing and Information Systems/Creative Computing
+# Computing and Information Systems / Creative Computing
 # CO3326 Computer Security
 
 # Coursework assignment 1 2018-19
@@ -16,6 +16,7 @@ To complete the coursework assignment, it will make your life easier if you writ
 ## Linear Feedback Shift Register
 
 A _linear feedback shift register_ is a register of bits that performs discrete step operations that:
+
 - Shift all of the bits one position to the left and
 - Replaces the vacated bit by the _exclusive or_ (XOR) of certain bits shifted off, indicated by the _tap_ positions.
 
@@ -64,7 +65,6 @@ Briefly - in one paragraph - describe the design of your code. Attach key snippe
 
 __REMINDER:__ It is important that your submitted coursework assignment is your own individual work and, for the most part, written in your own words. You must provide appropriate in-text citation for both paraphrase and quotation, with a detailed reference section at the end of your coursework. Copying, plagiarism and unaccredited and wholesale reproduction of material from books or from any online source is unacceptable, and will be penalised (see our [guide on how to avoid plagiarism on the VLE](https://computing.elearning.london.ac.uk/mod/page/view.php?id=5176)).
 
-
 ## Submission requirements
 
 You should upload __two__ single files only.  These must not be placed in a folder, zipped, _etc._
@@ -108,24 +108,27 @@ For this _cipher text_, intercepted _key stream fragment_ and _seed_, Steve Jobs
   "cipherText": "a5dc26183f945cbb6732"
 }
 ```
+
 ### Explanation
 
 The _srn_ and _name_ fields are self-explanatory. The binary _keyFragment_ field has been intercepted (given). The Berlekamp–Massey algorithm can be used to compute the _tap positions_, which is expected to be under the _lfsr_ field in the _taps_ subfield, which is an array of zero-based indices in decreasing order (i.e. [10, 8]). Once knowing the _tap positions_ and the _linear span_ of the LFSR, the entire _key_ can be generated starting from the _seed_, which has been intercepted (given). The _key_ in the result JSON is the key in hexadecimal, i.e. the corresponding value for the following binary number:
  
- ```
- 0110100001011001001001111011011100101101
- 0111001100010111111010010000100110100101
- ```
- You should notice 3 things:
- 1. the intercepted _cipherText_ is in hexadecimal and is 10 bytes long, exactly the same length as the generated _key stream_,
- 2. the _key stream_ starts with the given _seed_,
- 3. the _key stream_ contains the the _keyFragment_.
+```
+0110100001011001001001111011011100101101
+
+0111001100010111111010010000100110100101
+```
  
- Therefore the _plainText_ can be computed from the _cipherText_ and the _key_ with a simple _exclusive or_ (XOR) operation. All strings should be encoded / decoded using UTF-8. There are UTF-8 encoders/decoders available for all programming languages. If you have difficulty decoding, you can double-check yourself with the following Web API call http://foley.gold.ac.uk/cw19/api/decode?binary={binary number}, for example:
+You should notice 3 things:
+- the intercepted _cipherText_ is in hexadecimal and is 10 bytes long, exactly the same length as the generated _key stream_,
+- the _key stream_ starts with the given _seed_,
+- the _key stream_ contains the the _keyFragment_.
  
- - http://foley.gold.ac.uk/cw19/api/decode?binary=11101010110111001101001
+Therefore the _plainText_ can be computed from the _cipherText_ and the _key_ with a simple _exclusive or_ (XOR) operation. All strings should be encoded / decoded using UTF-8. There are UTF-8 encoders/decoders available for all programming languages. If you have difficulty decoding, you can double-check yourself with the following Web API call:
  
- This decodes as __uni__. 
+ http://foley.gold.ac.uk/cw19/api/decode?binary=11101010110111001101001
+ 
+This decodes as __uni__. You can call it with any binary number.
 
 ### Final note
 
