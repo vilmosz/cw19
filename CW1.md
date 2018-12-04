@@ -22,13 +22,13 @@ A _linear feedback shift register_ is a register of bits that performs discrete 
 A LFSR has three parameters that characterize the sequence of bits it produces: the number of bits _N_, the initial _seed_ (the sequence of bits that initializes the register), and the the tap positions _tap_. The following picture illustrates one step of an 11-bit LFSR with initial seed 11010000101 and tap positions 10 and 8.
 
 <p align="center">
-  <img src="LFSR.png" width="546" title="One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8">
+  <img src="https://raw.githubusercontent.com/vilmosz/cw19/master/LFSR.png" width="546" title="One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8">
 </p>
 
 Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and W
 [Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as it will be necessary for you to complete the coursework.
  
-In your research and reading you'll find references to _polynomials_ in the context of LFSRs, for example _x<sup>11</sup> + x<sup>9</sup> + 1_, which is equivalent to _tap positions 10 and 8_ and incidentally is a maximal length polynomial / tap positions for an 11-bit LFSR, allowing a maximum period of 2047 (= 2<sup>11</sup> - 1).
+In your research and reading you'll find references to _polynomials_ in the context of LFSRs, for example _x^11 + x^9 + 1_, which is equivalent to _tap positions 10 and 8_ and incidentally is a maximal length polynomial / tap positions for an 11-bit LFSR, allowing a maximum period of 2047 (= 2^11 - 1).
 
 ## Assignment
 
