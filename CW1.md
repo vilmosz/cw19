@@ -45,13 +45,13 @@ Explain why the use of LFSRs on their own is insufficient to provide good securi
 Describe very briefly, in your own words, what the Berlekamp-Massey algorithm is used for and how it works.
 
 ### Question 5
-Apply the Berlekamp-Massey algorithm on the key stream fragment you were given to obtain the _feedback polynomial_ that generated the key. For full marks, you have to implement the algorithm yourself, attach key part of the algorithm to the report as an annex and describe briefly which bit of the implementation you found the most challenging. If you use someone else's code or an online service you will not be awarded full marks; in this make sure you acknowledge the source of the code or service you use. 
+Apply the Berlekamp-Massey algorithm on the key stream fragment you were given to obtain the _feedback polynomial_ that generated the key. For full marks, you have to implement the algorithm yourself, attach key part of the algorithm to the report as an annex and describe briefly which bit of the implementation you found the most challenging. If you use someone else's code or an online service you will not be awarded full marks; in this case make sure you acknowledge the source of the code or service you use. 
 
 ### Question 6
 Generate the full key stream in order to be able to decrypt the cipher text you intercepted (i.e. what you were given). 
 
 ### Question 7
-Decrypt and decode the cipher text to get the original plain text message. Show all your workings. If your calculations are correct, you will get a English dictionary word as the plain text.  
+Decrypt and decode the cipher text to get the original plain text message. Show all your workings. If your calculations are correct, you will get an English dictionary word as the plain text.  
 
 ### Question 8
 Briefly - in one paragraph - describe the design of your code. Attach key snippets to the annex. Don't forget to acknowledge all sources. Make sure you acknowledge any code re-use.
@@ -104,23 +104,25 @@ For this _cipher text_, intercepted _key stream fragment_ and _seed_, Steve Jobs
 
 ### Explanation
 
-The _srn_ and _name_ fields are self-explanatory. The binary _keyFragment_ field has been intercepted (given). The Berlekamp–Massey algorithm can be used to compute the _tap positions_, which is expected to be under the _lfsr_ field in the _taps_ subfield, which is an array of zero-based indices in decreasing order (i.e. [10, 8]). Once knowing the _tap positions_ and the _linear span_ of the LFSR, the entire _key_ can be generated starting from the _seed_, which has been intercepted (given). The _key_ in the result JSON is the key in hexadecimal, i.e. the corresponding value for the following binary number:
+The _srn_ and _name_ fields are self-explanatory. The binary _keyFragment_ field has been intercepted (given). The Berlekamp–Massey algorithm can be used to compute the _tap positions_, which is expected to be under the _lfsr_ field in the _taps_ subfield, which is an array of zero-based indices in decreasing order (i.e. [10, 8]). Once knowing the _tap positions_ and the _linear span_ of the LFSR, the entire _key_ can be generated starting from the _seed_, which has been intercepted (given). The _key_ is the full-length key stream in hexadecimal that is necessary to decrypt the _cipherText_. The corresponding binary value for the _key_ in this case is:
  
 ```
 0110100001011001001001111011011100101101
 0111001100010111111010010000100110100101
 ```
  
+The _cipherText_ is also given in hexadecimal, so this needs to be converted to binary before the _key_ can be applied on it, i.e. a simple _exclusive or_ (XOR) operation, to get the encoded plain text. The binary encoded plain text then can be decoded to obtain the actual _plainText_, which is a recognisable English dictionary word.
+ 
 You should notice 3 things:
 - the intercepted _cipherText_ is in hexadecimal and is 10 bytes long, exactly the same length as the generated _key stream_,
 - the _key stream_ starts with the given _seed_,
 - the _key stream_ contains the the _keyFragment_.
  
-Therefore the _plainText_ can be computed from the _cipherText_ and the _key_ with a simple _exclusive or_ (XOR) operation. All strings should be encoded / decoded using UTF-8. There are UTF-8 encoders/decoders available for all programming languages. If you have difficulty decoding, you can double-check yourself with the following Web API call:
+All strings are encoded / decoded using UTF-8. There are UTF-8 encoders/decoders available for all programming languages. If you have difficulty decoding, you can double-check yourself with the following Web API call:
  
  http://foley.gold.ac.uk/cw19/api/decode?binary=11101010110111001101001
  
-This decodes as __uni__. You can call it with any binary number.
+This decodes as __uni__. You can call this with any binary number.
 
 ### Final note
 
