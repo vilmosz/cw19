@@ -15,7 +15,7 @@ To complete the coursework assignment, it will make your life easier if you writ
 
 ## Linear Feedback Shift Register
 
-A _linear feedback shift register_ is a register of bits that performs discrete step operations that:
+A _linear feedback shift register_ (LFSR) is a type of counter that generates a "pseudo random" sequence. In simple terms, it is a register of bits that performs discrete step operations that:
 
 - Shift all of the bits one position to the left and
 - Replaces the vacated bit by the _exclusive or_ (XOR) of certain bits shifted off, indicated by the _tap_ positions.
@@ -24,43 +24,36 @@ A LFSR has three parameters that characterize the sequence of bits it produces: 
 
 ![One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8](https://raw.githubusercontent.com/vilmosz/cw19/master/LFSR.png)
 
-Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and W
-[Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as it will be necessary for you to complete the coursework.
+Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and [Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as it will be necessary for you to complete the coursework.
  
-In your research and reading you'll find references to _polynomials_ in the context of LFSRs, for example _x^11 + x^9 + 1_, which is equivalent to _tap positions_ 10 and 8 and incidentally is a maximal length polynomial / tap positions for an 11-bit LFSR, allowing a maximum period of _2047 = 2^11 - 1_.
-
 ## Assignment
 
-Suppose you are an avid hacker working for a security agency and you are eavesdropping on a conversation between _Alice_ and _Bob_. You intercept a _cipher text_, a _key stream fragment_ and a _seed_ that you know has been sent from Alice to Bob. You know that they are using an cryptosystem based on LFSRs. You would like to decrypt the message.
+Suppose you are an avid hacker working for a security agency and you intercepted a _cipher text_, a _key stream fragment_ and a _seed_ that you know has been sent using a cryptosystem based on LFSRs. You would like to decrypt the message.
 
 __IMPORTANT:__ To answer the questions below, please use the _cipher text_, intercepted _key stream fragment_ and _seed_ that you obtained using your SRN.
 
 ### Question 1
-Describe briefly the steps you need to take to decipher the message.
+Describe very briefly how stream ciphers work and a few reasons why stream ciphers based on linear-feedback shift registers are so popular.
 
 ### Question 2
-Which algorithms would be feasible for factorisation for the particular keys that you are trying to break? Compare the algorithms very briefly in terms of:
-
-- number of digits they can deal with,
-- time efficiency,
-- memory consumption.
+Explain the following terms in the context of LFSRs: _feedback function_, _primitive polynomial_ and _cycle_. What are _maximal-length polynomials_? 
 
 ### Question 3
-Break Alice and Bob's key. State the factorisation algorithm you use and state the running time. If you rely on an online service, state the service you're using and investigate what algorithm is backing the service. _Note_: you will only be able to achieve half marks for this question if you rely on an online tool.
+Explain why the use of LFSRs on their own is insufficient to provide good security. List three schemes that have been proposed to increase the security of LFSRs.
 
 ### Question 4
-What are the implications of the following assumptions on the keys used?
-
-- Alice wants to be sure that only Bob can decrypt the message,
-- Bob wants to be sure that Alice has sent the message.
+Describe very briefly, in your own words, what the Berlekamp-Massey algorithm is used for and how it works.
 
 ### Question 5
-Are there any restrictions on the ordering of the keys when encrypting? Using your numbers explain why. Is the ordering the same on decryption?
+Apply the Berlekamp-Massey algorithm on the key stream fragment you were given to obtain the _feedback polynomial_ that generated the key. For full marks, you have to implement the algorithm yourself, attach key part of the algorithm to the report as an annex and describe briefly which bit of the implementation you found the most challenging. If you use someone else's code or an online service you will not be awarded full marks; in this make sure you acknowledge the source of the code or service you use. 
 
 ### Question 6
-Decipher the message. Show your work.
+Generate the full key stream in order to be able to decrypt the cipher text you intercepted (i.e. what you were given). 
 
-### Annex
+### Question 7
+Decrypt and decode the cipher text to get the original plain text message. Show all your workings. If your calculations are correct, you will get a English dictionary word as the plain text.  
+
+### Question 8
 Briefly - in one paragraph - describe the design of your code. Attach key snippets to the annex. Don't forget to acknowledge all sources. Make sure you acknowledge any code re-use.
 
 __REMINDER:__ It is important that your submitted coursework assignment is your own individual work and, for the most part, written in your own words. You must provide appropriate in-text citation for both paraphrase and quotation, with a detailed reference section at the end of your coursework. Copying, plagiarism and unaccredited and wholesale reproduction of material from books or from any online source is unacceptable, and will be penalised (see our [guide on how to avoid plagiarism on the VLE](https://computing.elearning.london.ac.uk/mod/page/view.php?id=5176)).
@@ -115,7 +108,6 @@ The _srn_ and _name_ fields are self-explanatory. The binary _keyFragment_ field
  
 ```
 0110100001011001001001111011011100101101
-
 0111001100010111111010010000100110100101
 ```
  
