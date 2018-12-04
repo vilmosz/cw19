@@ -22,7 +22,7 @@ A _linear feedback shift register_ is a register of bits that performs discrete 
 A LFSR has three parameters that characterize the sequence of bits it produces: the number of bits _N_, the initial _seed_ (the sequence of bits that initializes the register), and the the tap positions _tap_. The following picture illustrates one step of an 11-bit LFSR with initial seed 11010000101 and tap positions 10 and 8.
 
 <p align="center">
-  <img src="LFSR.png" width="100%" title="One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8">
+  <img src="LFSR.png" width="546" title="One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8">
 </p>
 
 Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and W
