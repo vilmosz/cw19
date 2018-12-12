@@ -26,6 +26,7 @@ A LFSR has three parameters that characterize the sequence of bits it produces: 
 
 Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and [Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as it is necessary for you to complete the coursework.
  
+\pagebreak
 ## Assignment
 
 Suppose you are an avid hacker working for a security agency and you intercepted a _cipher text_, a _key stream fragment_ and a _seed_ that you know has been sent using a cryptosystem based on LFSRs. You would like to decrypt the message.
@@ -66,6 +67,7 @@ The __report__ should be submitted as a PDF document following a _strict naming 
 
 The __results sheet__ should be submitted as a JSON file with a _strict format_ and _strict naming scheme_. This summarises the results of your calculations and will be automatically checked by an algorithm, so pay particular attention to its format. The name of the file should be `YourName_{srn}_CO3326_cw1.json`; for example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326_cw1.json`.
 
+\newpage
 ## Example
 
 You have obtained the _cipher text_, intercepted _key stream fragment_ and _seed_ in the following format (this is an example for illustration):
