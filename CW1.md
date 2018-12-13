@@ -1,8 +1,7 @@
 # University of London
 
 # Computing and Information Systems/Creative Computing
-# CO3326 Computer security
-# 2018-19
+# CO3326 Computer security 2018-19
 
 # Coursework assignment 1
 
@@ -37,28 +36,28 @@ Suppose you are an avid hacker working for a security agency and you intercept a
 
 __IMPORTANT:__ To answer the questions below, please use the _cipher text_, intercepted _key stream fragment_ and _seed_ that you obtained using your SRN.
 
-### Question 1
+#### Question 1
 Briefly describe how stream ciphers work and give a few reasons why stream ciphers based on linear-feedback shift registers are so popular.
 
-### Question 2
+#### Question 2
 Explain the following terms in the context of LFSRs: _feedback function_, _primitive polynomial_ and _cycle_. What are _maximal-length polynomials_?
 
-### Question 3
+#### Question 3
 Explain why the use of LFSRs on their own is insufficient to provide good security. List three schemes that have been proposed to increase the security of LFSRs.
 
-### Question 4
+#### Question 4
 Briefly describe, in your own words, what the Berlekamp-Massey algorithm is used for and how it works.
 
-### Question 5
+#### Question 5
 Apply the Berlekamp-Massey algorithm on the key stream fragment you were given to obtain the _feedback polynomial_ that generated the key. For full marks, you have to implement the algorithm yourself, attach key parts of the algorithm to the report as an appendix and describe briefly which bit of the implementation you found the most challenging. If you use someone else's code or an online service you will not be awarded full marks; in this case make sure you acknowledge the source of the code or service you use.
 
-### Question 6
+#### Question 6
 Generate the full key stream in order to be able to decrypt the cipher text you intercepted (_i.e._ what you were given).
 
-### Question 7
+#### Question 7
 Decrypt and decode the cipher text to get the original plain text message. Show all your workings. If your calculations are correct, you will get an English dictionary word as the plain text.
 
-### Question 8
+#### Question 8
 Briefly - in one paragraph - describe the design of your code. Attach key snippets to the annex. Do not forget to acknowledge all sources. Make sure you acknowledge any code re-use.
 
 
