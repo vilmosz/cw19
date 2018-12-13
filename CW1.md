@@ -88,6 +88,8 @@ You have obtained the _cipher text_, intercepted _key stream fragment_ and _seed
 }
 ```
 
+\newline
+
 For this _cipher text_, intercepted _key stream fragment_ and _seed_, Steve Jobs would submit the following JSON, which reflects a correct solution:
 
 ```json
