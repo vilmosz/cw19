@@ -115,8 +115,8 @@ For this _cipher text_, intercepted _key stream fragment_ and _seed_, Steve Jobs
 The _srn_ and _name_ fields are self-explanatory. The binary _keyFragment_ field has been intercepted (given). The Berlekamp–Massey algorithm can be used to compute the _tap positions_, which is expected to be under the _lfsr_ field in the _taps_ subfield, which is an array of zero-based indices in decreasing order (_i.e._ [10, 8]). Once the _tap positions_ and the _linear span_ of the LFSR are known, the entire _key_ can be generated starting from the _seed_, which has been intercepted (given). The _key_ is the full-length key stream in hexadecimal that is necessary to decrypt the _cipherText_. The corresponding binary value for the _key_ in this case is:
 
 ```
-0110100001011001001001111011011100101101
-0111001100010111111010010000100110100101
+1101000010110010010011110110111001011010
+1110011000101111110100100001001101001011
 ```
 
 The _cipherText_ is also given in hexadecimal, so this needs to be converted to binary before the _key_ can be applied on it, _i.e._ a simple _exclusive or_ (XOR) operation, to get the encoded plain text. The binary encoded plain text can then be decoded to obtain the actual _plainText_, which is a recognisable English dictionary word.
