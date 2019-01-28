@@ -5,3 +5,4 @@
 ## 2018 - 2019
 
 * [Coursework assignment 1](CW1.md)
+* [Coursework assignment 2](CW2.md)
