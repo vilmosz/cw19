@@ -15,21 +15,6 @@ To complete the coursework assignment, it will make your life easier if you writ
 
 \newpage
 
-## Linear Feedback Shift Register
-
-A _linear feedback shift register_ (LFSR) is a type of counter that generates a "pseudo random" sequence of bits, which is particularly useful in cryptography. In simple terms, it is a register of bits that performs discrete step operations that:
-
-- shifts all of the bits one position to the left, and
-- replaces the vacated bit by the _exclusive or_ (XOR) of certain bits shifted off, indicated by the _tap_ positions.
-
-A LFSR has three parameters that characterise the sequence of bits it produces: the number of bits _N_, the initial _seed_ (the sequence of bits that initialises the register), and the the tap positions _tap_. The following picture illustrates one step of an 11-bit LFSR with initial seed 11010000101 and tap positions 10 and 8.
-
-![One step of an 11-bit LFSR with initial seed 11010000101 and tap positions at bits 10 and 8](https://raw.githubusercontent.com/vilmosz/cw19/master/LFSR.png)
-
-Please do some research around LFSRs, starting from your subject guide (Chapter 5), suggested readings and [Wikipedia](https://en.wikipedia.org/wiki/Linear-feedback_shift_register). Make sure you also understand the [Berlekamp-Massey algorithm](https://en.wikipedia.org/wiki/Berlekamp%E2%80%93Massey_algorithm) as this is necessary for you to complete the coursework assignment.
-
-\newpage
-
 ## Assignment
 
 Suppose you are an avid hacker working for a security agency and you intercept a _cipher text_, a _key stream fragment_ and a _seed_ that you know has been sent using a cryptosystem based on LFSRs. You would like to decrypt the message.
@@ -67,9 +52,9 @@ __REMINDER:__ It is important that your submitted coursework assignment is your 
 
 You should upload __two__ single files only.  These must not be placed in a folder, zipped, _etc._
 
-The __report__ should be submitted as a PDF document following a _strict naming scheme_: `YourName_{srn}_CO3326_cw1.pdf`. For example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326_cw1.pdf`.
+The __report__ should be submitted as a PDF document following a _strict naming scheme_: `YourName_{srn}_CO3326_cw2.pdf`. For example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326_cw2.pdf`.
 
-The __results sheet__ should be submitted as a JSON file with a _strict format_ and _strict naming scheme_. This summarises the results of your calculations and will be automatically checked by an algorithm, so pay particular attention to its format. The name of the file should be `YourName_{srn}_CO3326_cw1.json`; for example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326_cw1.json`.
+The __results sheet__ should be submitted as a JSON file with a _strict format_ and _strict naming scheme_. This summarises the results of your calculations and will be automatically checked by an algorithm, so pay particular attention to its format. The name of the file should be `YourName_{srn}_CO3326_cw2.json`; for example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326_cw2.json`.
 
 
 ## Example
@@ -80,11 +65,16 @@ You have obtained the _cipher text_, intercepted _key stream fragment_ and _seed
 {
   "srn": "877665544",
   "name": "Steve Jobs",
-  "lfsr": {
-    "seed": "11010000101"
-  },
-  "keyFragment": "10100100001001101001011",
-  "cipherText": "a5dc26183f945cbb6732"
+  "exercise1": {
+    "p": "2685735182215187",
+    "g": "2",
+    "a": "3628281929",
+    "b": "5915661551",
+    "cipherText": {
+      "encoded": "65462432711955",
+      "base64": "O4mpDEUT"
+    }
+  }
 }
 ```
 
@@ -96,17 +86,41 @@ For this _cipher text_, intercepted _key stream fragment_ and _seed_, Steve Jobs
 {
   "srn": "877665544",
   "name": "Steve Jobs",
-  "lfsr": {
-    "taps": [
-      10,
-      8
-    ],
-    "seed": "11010000101"
+  "exercise1": {
+    "p": "2685735182215187",
+    "g": "2",
+    "a": "3628281929",
+    "b": "5915661551",
+    "x": "1611247168640770",
+    "y": "1057465508852156",
+    "k": "1133299385179611",
+    "cipherText": {
+      "encoded": "65462432711955",
+      "base64": "O4mpDEUT"
+    },
+    "plainText": {
+      "encoded": "427071729268",
+      "base64": "Y291bnQ=",
+      "text": "count"
+    }
   },
-  "keyFragment": "10100100001001101001011",
-  "key": "d0b24f6e5ae62fd2134b",
-  "plainText": "university",
-  "cipherText": "a5dc26183f945cbb6732"
+  "exercise2": {
+    "p": "44685735181995023",
+    "g": "5",
+    "a": "4628273483",
+    "b": "6915587579",
+    "x": "3934012106049896",
+    "y": "6387156331543282",
+    "k": "16887845058447247",
+    "cipherText": {
+      "encoded": "27261997930282270",
+      "base64": "YNqkhoB9Hg=="
+    },
+    "plainText": {
+      "encoded": "877665544",
+      "base64": "NFAdCA=="
+    }
+  }
 }
 ```
 
