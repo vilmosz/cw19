@@ -20,7 +20,7 @@ To complete the coursework assignment, it will make your life easier if you writ
 This coursework assignment takes a practical example for the El Gamal public key cryptosystem. The notation is similar to the one used in your Subject guide (chapter 9.4). __IMPORTANT:__ To answer the questions below, please use the coursework 2 assignment data that you obtained using your SRN.
 
 #### Question 1
-Verify whether _p_ is an actual prime. Provide a brief explanation and include the method from your code, as well as the runtime. __Clarification:__ you have to verify that _p_ is a prime with certainty, _i.e._ not just a probable prime but an actual prime.
+Verify whether _p_ is an actual prime (_i.e._ not just a probable prime). Provide a brief explanation and include the method from your code, as well as the runtime.
 
 #### Question 2
 What is the computational complexity of your primality check? Presumably, you have a loop; how many steps does it take relative to _p_? Include the code where you calculate this.
@@ -43,6 +43,7 @@ Suppose Alice and Bob want to generate a new set of keys. They decide that they 
 #### Question 8
 Generate new set of private and public keys for Alice and Bob, using the _p_ and _g_ you generated in Question 7. Encrypt your SRN with the shared key. Include a brief explanation and the relevant code snippet.
 
+\newpage
 
 ## Submission requirements
 
