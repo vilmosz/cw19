@@ -35,7 +35,7 @@ Verify whether _g_ is a generator for _p_. Provide a brief explanation and inclu
 Considering that _a_ is Alice's private key and _b_ is Bob's private key, compute their public keys and show how they can generate the same shared key. Include a brief explanation and the relevant code snippet.
 
 #### Question 6
-Decrypt the provided cipher text, knowing that it has been encrypted with the shared key that you computed in Question 5. Include a brief explanation and the relevant code snippet. __Hint:__ the plain text is an English dictionary word.
+Decrypt the provided cipher text, knowing that it has been encrypted with the shared key that you computed in Question 5. Include a brief explanation and the relevant code snippet.
 
 #### Question 7
 Suppose Alice and Bob want to generate a new set of keys. They decide that they should use a 17 digits prime instead. How would they go on about generating a new _p_ and a corresponding generator _g_? Provide a brief explanation and include the relevant code snippet as well its runtime.
