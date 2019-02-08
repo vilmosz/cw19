@@ -1,13 +1,13 @@
 # University of London
 
 # Computing and Information Systems/Creative Computing
-# CO3326 Computer security 2018-19
+# CO3326 Computer security
 
-# Coursework assignment 2
+# Coursework assignment 2018--19
 
 __IMPORTANT:__ all students have been allocated a unique set of data to use for this coursework assignment. You can obtain this using your Student Reference Number (SRN) from the following URL: http://foley.gold.ac.uk/cw19/api/cw2/{srn}. For example, if your SRN is 877665544, you would obtain your data from [http://foley.gold.ac.uk/cw19/api/cw2/877665544](http://foley.gold.ac.uk/cw19/api/cw2/877665544). If you have difficulties obtaining your assignment data, please email us at: [intcomp@gold.ac.uk](intcomp@gold.ac.uk)
 
-This coursework assignment is designed to help you enrich your learning experience and to encourage self-study and creativity. Chapter 9 (pages 95-103) of the subject guide, including the suggested supplementary reading, will help you in completing this assignment. You should read the coursework assignments carefully and pay particular attention to the [Submission requirements](#submission-requirements).
+This coursework assignment is designed to help you enrich your learning experience and to encourage self-study and creativity. Chapter 9 (pages 95-103) of the subject guide, including the suggested supplementary reading, will help you in completing this assignment. You should read the coursework assignments very carefully and pay particular attention to the [Submission requirements](#submission-requirements).
 
 You are expected to submit __two__ files: a __report__ and a __results sheet__. The _report_ counts as __60%__ of your coursework assignment mark, in which you are expected to answer the questions below. The _results sheet_ counts as __40%__ of your mark, in which you are expected to summarise the results of your calculations in a specific format. Please use the cipher text and keys provided when answering the questions and when compiling the results sheet.
 
@@ -15,9 +15,9 @@ To complete the coursework assignment, it will make your life easier if you writ
 
 \newpage
 
-## Assignment
+## Coursework assignment 2
 
-This coursework assignment takes a practical example for the El Gamal public key cryptosystem. The notation is similar to the one used in your Subject guide (chapter 9.4). __IMPORTANT:__ To answer the questions below, please use the coursework 2 assignment data that you obtained using your SRN.
+This coursework assignment takes a practical example for the El Gamal public key cryptosystem. The notation is similar to the one used in your subject guide (section 9.4, pages 99 - 101). __IMPORTANT:__ To answer the questions below, please use the coursework 2 assignment data that you obtained using your SRN.
 
 #### Question 1
 Verify whether _p_ is an actual prime (_i.e._ not just a probable prime). Provide a brief explanation and include the method from your code, as well as the runtime.
@@ -26,22 +26,22 @@ Verify whether _p_ is an actual prime (_i.e._ not just a probable prime). Provid
 What is the computational complexity of your primality check? Presumably, you have a loop; how many steps does it take relative to _p_? Include the code where you calculate this.
 
 #### Question 3
-Discuss briefly how can you go about optimising the primality check by providing a code snippet.
+Discuss briefly how you can go about optimising the primality check, including a code snippet.
 
 #### Question 4
-Verify whether _g_ is a generator for _p_. Provide a brief explanation and include the method from your code, as well as the runtime. __Hint:__ As _p_ is a 16 digits prime, the definition from your subject guide is not a practical way to verify whether _g_ is a generator. You will have a do a bit of research on how El Gamal is implemented in practice (for example in Open SSL) and you will realise that _p_ is a special kind of prime.
+Verify whether _g_ is a generator for _p_. Provide a brief explanation and include the method from your code, as well as the runtime. __Hint:__ As _p_ is a 16-digit prime, the definition from your subject guide is not a practical way to verify whether _g_ is a generator. You will have to research on how El Gamal is implemented in practice (for example in Open SSL) - you will find that _p_ is a special kind of prime.
 
 #### Question 5
 Considering that _a_ is Alice's private key and _b_ is Bob's private key, compute their public keys and show how they can generate the same shared key. Include a brief explanation and the relevant code snippet.
 
 #### Question 6
-Decrypt the provided cipher text, knowing that it has been encrypted with the shared key that you computed in Question 5. Include a brief explanation and the relevant code snippet.
+Decrypt the provided cipher text, which has been encrypted with the shared key that you computed in Question 5. Include a brief explanation and the relevant code snippet.
 
 #### Question 7
-Suppose Alice and Bob want to generate a new set of keys. They decide that they should use a 17 digits prime instead. How would they go on about generating a new _p_ and a corresponding generator _g_? Provide a brief explanation and include the relevant code snippet as well its runtime.
+Suppose Alice and Bob want to generate a new set of keys. They decide that they should use a 17-digit prime instead. How would they go on about generating a new _p_ and a corresponding generator _g_? Provide a brief explanation and include the relevant code snippet, as well as its runtime.
 
 #### Question 8
-Generate new set of private and public keys for Alice and Bob, using the _p_ and _g_ you generated in Question 7. Encrypt your SRN with the shared key. Include a brief explanation and the relevant code snippet.
+Generate a new set of private and public keys for Alice and Bob, using the _p_ and _g_ you generated in Question 7. Encrypt your SRN with the shared key. Include a brief explanation and the relevant code snippet.
 
 \newpage
 
@@ -125,7 +125,7 @@ For this, Steve Jobs would submit the following JSON, which reflects a correct s
 
 ### Explanation
 
-The _srn_ and _name_ fields are self-explanatory. _exercise1_ is relevant for questions 1 to 6 from the report. _exercise2_ contains the results of questions 7 and 8. The notation is similar to the notation used in chapter 9.4 is the subject guide: _p_ is the prime, _g_ is the generator, _a_ is Alice's private key, _b_ is Bob's private key, _x_ is Alice's public key, _y_ is Bob's public key, _k_ is the resulting shared secret key.
+The _srn_ and _name_ fields are self-explanatory. _exercise1_ is relevant for questions 1 to 6 from the report. _exercise2_ contains the results of questions 7 and 8. The notation is similar to the notation used in section 9.4, pages 99 - 101, in the subject guide: _p_ is the prime, _g_ is the generator, _a_ is Alice's private key, _b_ is Bob's private key, _x_ is Alice's public key, _y_ is Bob's public key, _k_ is the resulting shared secret key.
 
 In Exercise 1 the plain text has been encoded with Base64, which has been transformed to a number. If you are using Java, there are utilities provided by Apache or Google, among others, to do these operations. Similar libraries exist in other programming languages. If you struggle with these operations or you would like to double-check your results, you can use the web API calls below. For Base64 encoding/decoding you can use the following:
 
@@ -145,3 +145,5 @@ In both the _plainText_ and _cipherText_, the _encoded_ is a number, the _text_ 
 ### Final note
 
 You can use the example solution above as a template, which is a well-formed JSON, and replace the values with your data and calculation results. As the JSON will be evaluated by an algorithm, every quote, comma, colon, curly brace upper/lower case is crucial. Please pay attention to these. It would be a shame to lose a potential __40%__ of the total marks for this coursework assignment because of a misplaced comma or a missing quote. There are online tools you can use for JSON formatting and validation (for example [https://jsonformatter.curiousconcept.com](https://jsonformatter.curiousconcept.com)), so double-check that your JSON is syntactically correct.
+
+[END OF COURSEWORK ASSIGNMENT 2]
