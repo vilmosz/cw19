@@ -1,13 +1,11 @@
 # University of London
-
 # Computing and Information Systems/Creative Computing
 # CO3326 Computer security
-
-# Coursework assignment 2018--19
+# Coursework assignment 2 2018--19
 
 __IMPORTANT:__ all students have been allocated a unique set of data to use for this coursework assignment. You can obtain this using your Student Reference Number (SRN) from the following URL: http://foley.gold.ac.uk/cw19/api/cw2/{srn}. For example, if your SRN is 877665544, you would obtain your data from [http://foley.gold.ac.uk/cw19/api/cw2/877665544](http://foley.gold.ac.uk/cw19/api/cw2/877665544). If you have difficulties obtaining your assignment data, please email us at: [intcomp@gold.ac.uk](intcomp@gold.ac.uk)
 
-This coursework assignment is designed to help you enrich your learning experience and to encourage self-study and creativity. Chapter 9 (pages 95-103) of the subject guide, including the suggested supplementary reading, will help you in completing this assignment. You should read the coursework assignments very carefully and pay particular attention to the [Submission requirements](#submission-requirements).
+This coursework assignment is designed to help you enrich your learning experience and to encourage self-study and creativity. Chapter 9 (pages 95-103) of the subject guide, including the suggested supplementary reading, will help you in completing this assignment. You should read the coursework assignment very carefully and pay particular attention to the [Submission requirements](#submission-requirements).
 
 You are expected to submit __two__ files: a __report__ and a __results sheet__. The _report_ counts as __60%__ of your coursework assignment mark, in which you are expected to answer the questions below. The _results sheet_ counts as __40%__ of your mark, in which you are expected to summarise the results of your calculations in a specific format. Please use the cipher text and keys provided when answering the questions and when compiling the results sheet.
 
@@ -29,13 +27,13 @@ What is the computational complexity of your primality check? Presumably, you ha
 Discuss briefly how you can go about optimising the primality check, including a code snippet.
 
 #### Question 4
-Verify whether _g_ is a generator for _p_. Provide a brief explanation and include the method from your code, as well as the runtime. __Hint:__ As _p_ is a 16-digit prime, the definition from your subject guide is not a practical way to verify whether _g_ is a generator. You will have to research on how El Gamal is implemented in practice (for example in Open SSL) - you will find that _p_ is a special kind of prime.
+Verify whether _g_ is a generator for _p_. Provide a brief explanation and include the method from your code, as well as the runtime. __Hint:__ As _p_ is a 16-digit prime, the definition from your subject guide is not a practical way to verify whether _g_ is a generator. You will have to research on how El Gamal is implemented in practice (for example in Open SSL) -- you will find that _p_ is a special kind of prime.
 
 #### Question 5
 Considering that _a_ is Alice's private key and _b_ is Bob's private key, compute their public keys and show how they can generate the same shared key. Include a brief explanation and the relevant code snippet.
 
 #### Question 6
-Decrypt the provided cipher text, which has been encrypted with the shared key that you computed in Question 5. Include a brief explanation and the relevant code snippet.
+Decrypt the provided cipher text which has been encrypted with the shared key that you computed in Question 5. Include a brief explanation and the relevant code snippet.
 
 #### Question 7
 Suppose Alice and Bob want to generate a new set of keys. They decide that they should use a 17-digit prime instead. How would they go on about generating a new _p_ and a corresponding generator _g_? Provide a brief explanation and include the relevant code snippet, as well as its runtime.
@@ -51,9 +49,9 @@ __REMINDER:__ It is important that your submitted coursework assignment is your 
 
 You should upload __two__ single files only.  These must not be placed in a folder, zipped, _etc._
 
-The __report__ should be submitted as a PDF document following a _strict naming scheme_: `YourName_{srn}_CO3326_cw2.pdf`. For example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326_cw2.pdf`.
+The __report__ should be submitted as a PDF document following a _strict naming scheme_: `YourName_{srn}_CO3326cw2.pdf`. For example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326cw2.pdf`.
 
-The __results sheet__ should be submitted as a JSON file with a _strict format_ and _strict naming scheme_. This summarises the results of your calculations and will be automatically checked by an algorithm, so pay particular attention to its format. The name of the file should be `YourName_{srn}_CO3326_cw2.json`; for example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326_cw2.json`.
+The __results sheet__ should be submitted as a JSON file with a _strict format_ and _strict naming scheme_. This summarises the results of your calculations and will be automatically checked by an algorithm, so pay particular attention to its format. The name of the file should be `YourName_{srn}_CO3326cw2.json`; for example, Steve Jobs with SRN 877665544 would submit `SteveJobs_877665544_CO3326cw2.json`.
 
 
 ## Example
@@ -146,4 +144,6 @@ In both the _plainText_ and _cipherText_, the _encoded_ is a number, the _text_ 
 
 You can use the example solution above as a template, which is a well-formed JSON, and replace the values with your data and calculation results. As the JSON will be evaluated by an algorithm, every quote, comma, colon, curly brace upper/lower case is crucial. Please pay attention to these. It would be a shame to lose a potential __40%__ of the total marks for this coursework assignment because of a misplaced comma or a missing quote. There are online tools you can use for JSON formatting and validation (for example [https://jsonformatter.curiousconcept.com](https://jsonformatter.curiousconcept.com)), so double-check that your JSON is syntactically correct.
 
+\begin{center}
 [END OF COURSEWORK ASSIGNMENT 2]
+\end{center}
